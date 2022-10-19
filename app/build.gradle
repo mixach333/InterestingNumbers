@@ -1,9 +1,14 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
 }
 
 android {
+    buildFeatures{
+        viewBinding true
+    }
     compileSdk 32
 
     defaultConfig {
@@ -32,7 +37,32 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.core:core-splashscreen:1.0.0'
 
+
+
+    // Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    // Retrofit with Scalar Converter
+    implementation "com.squareup.retrofit2:converter-scalars:2.9.0"
+    //Annotations for room, room runtime, room ktx
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-ktx:$room_version"
+
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+
+    //navigation ktx and ui
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+
+    //Starting dependencies
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
     implementation 'com.google.android.material:material:1.6.1'
