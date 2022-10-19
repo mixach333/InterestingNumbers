@@ -22,15 +22,10 @@ class MainActivity : AppCompatActivity() {
             isGone.value
         }
         lifecycleScope.launch {
-            Log.d("m3", "coroutine started")
-            delay(5000)
-            Log.d("m3", "coroutine before changing isGone")
+            delay(2000)
             isGone.value = true
-            Log.d("m3", "isGone changed")
         }
-        Log.d("m3", "setContentView activity_main")
         setContentView(R.layout.activity_main)
-        Log.d("m3", "started activity main")
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragment_container_view) as NavHostFragment
         navController = navHostFragment.navController
