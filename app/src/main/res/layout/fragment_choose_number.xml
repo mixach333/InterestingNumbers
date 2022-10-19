@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/padding_or_margin_big"
+    app:cardElevation="@dimen/card_elevation_big"
+    app:cardCornerRadius="@dimen/card_corner_radius_big"
     tools:context=".ChooseNumberFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:layout_margin="@dimen/padding_or_margin_medium"
+        android:padding="@dimen/padding_or_margin_medium"
+        android:gravity="center_horizontal">
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/chooseNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size_medium"
+                android:hint="@string/InputTextHint"
+                android:inputType="number"
+                android:gravity="center_horizontal"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-</FrameLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/getFactButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_or_margin_medium"
+            app:backgroundTint="@color/grey"
+            android:enabled="false"
+            android:text="@string/get_fact"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_big"
+            app:cornerRadius="@dimen/card_corner_radius_medium" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/getRandomFactButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/padding_or_margin_medium"
+            android:text="@string/get_random_number_fact"
+            android:textColor="@color/red"
+            android:textSize="@dimen/text_size_big"
+            app:backgroundTint="@color/grey"
+            app:cornerRadius="@dimen/card_corner_radius_medium" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/padding_or_margin_medium"/>
+    </LinearLayout>
+
+
+
+</androidx.cardview.widget.CardView>
