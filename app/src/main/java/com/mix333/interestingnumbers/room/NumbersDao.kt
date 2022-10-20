@@ -1,5 +1,7 @@
 package com.mix333.interestingnumbers.room
 
+
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -15,10 +17,10 @@ interface NumbersDao {
     suspend fun delete(number: Number)
 
     @Query("SELECT * FROM numbers_table WHERE number=:number")
-    fun getNumber(number: Int)
+    fun getNumber(number: Int) : LiveData<Number>
 
     @Query("SELECT * FROM numbers_table ORDER BY createdTime DESC")
-    fun getAllNumbers()
+    fun getAllNumbers() : LiveData<List<Number>>
 
 
 }
