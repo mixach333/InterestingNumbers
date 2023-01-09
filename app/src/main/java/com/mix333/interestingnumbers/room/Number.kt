@@ -12,5 +12,5 @@ data class Number(
     @ColumnInfo(name = "details")
     val details: String,
     @ColumnInfo(name = "createdTime")
-    val createdTime : Date = Calendar.getInstance().time
+    val createdTime : Long = Calendar.getInstance().timeInMillis
 )

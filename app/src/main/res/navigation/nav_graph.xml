@@ -3,11 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/chooseNumberFragment">
+    android:label="Choose number"
+    app:startDestination="@id/numberChooseFragment">
 
     <fragment
-        android:id="@+id/chooseNumberFragment"
-        android:name="com.mix333.interestingnumbers.ChooseNumberFragment"
-        android:label="fragment_choose_number"
-        tools:layout="@layout/fragment_choose_number" />
+        android:id="@+id/numberDetailsFragment"
+        android:name="com.mix333.interestingnumbers.ui.NumberDetailsFragment"
+        android:label="fragment_number_details"
+        tools:layout="@layout/fragment_number_details" />
+    <fragment
+        android:id="@+id/numberChooseFragment"
+        android:name="com.mix333.interestingnumbers.ui.NumberChooseFragment"
+        android:label="Get a fact for number..."
+        tools:layout="@layout/fragment_number_choose" />
 </navigation>

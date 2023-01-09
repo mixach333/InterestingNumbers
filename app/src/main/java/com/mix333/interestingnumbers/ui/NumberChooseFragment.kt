@@ -4,10 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.mix333.interestingnumbers.databinding.FragmentChooseNumberBinding
+import com.mix333.interestingnumbers.databinding.FragmentNumberChooseBinding
 
-class ChooseNumberFragment : BaseFragment<FragmentChooseNumberBinding>(
-    FragmentChooseNumberBinding::inflate
+class NumberChooseFragment : BaseFragment<FragmentNumberChooseBinding>(
+    FragmentNumberChooseBinding::inflate
 ) {
 
     override fun onCreateView(
